@@ -82,7 +82,7 @@
   <style scoped>
   .register-layout {
     font-family: 'Arial', sans-serif;
-    background-color: aliceblue;
+    background-color: #04020d;
   }
   
   header {
@@ -159,7 +159,7 @@
   }
   
   button.submit-btn:hover {
-    background-color: #45a049;
+    background-color: #510b0a;
   }
   
   /* Add smooth input animation */

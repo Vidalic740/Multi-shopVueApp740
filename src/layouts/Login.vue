@@ -85,7 +85,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f5f5f5;
+    background-color: #04020d;
   }
   
   .login-box {
@@ -145,6 +145,7 @@
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s;
+    align-self: center;
   }
   
   button.submit-btn:hover {
