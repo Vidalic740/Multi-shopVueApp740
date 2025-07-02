@@ -14,8 +14,8 @@ const routes = [
   // Root page of the app
   {
     path: '/',
-    name: 'SidebarLayout',
-    component: SidebarLayout,
+    name: 'Home',
+    component: Home,
   },
 
   // Register page layout
@@ -30,6 +30,13 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: Login,
+  },
+
+  //Sidebar Layout
+  {
+    path: '/sidebar',
+    name: 'SidebarLayout',
+    component: SidebarLayout,
   },
 
   //HomeView layout

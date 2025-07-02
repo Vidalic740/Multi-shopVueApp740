@@ -11,7 +11,7 @@ import heroImage from '@/assets/images/hero.jpg';
         <h2 class="brand">S.A</h2>
       </div>
       <div class="navbar-right">
-        <router-link to="/register" class="nav-link">Register</router-link>
+        <router-link to="/register" class="nav-link">Sign Up</router-link>
         <router-link to="/login" class="nav-link">Login</router-link>
       </div>
     </header>

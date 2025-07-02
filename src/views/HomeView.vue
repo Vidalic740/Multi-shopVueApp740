@@ -1,22 +1,20 @@
 <script setup>
 import heroImage from '@/assets/images/computer&accessories.png';
+
 </script>
 
 <template>
   <div class="homepage">
-
-    <!--Side by Side Sections-->
+    <!-- Side by Side Sections -->
     <section class="sides">
-      <!--Right Section-->
+      <!-- Right Section -->
       <div class="right-section">
-        <section class="hero"
-          :style="{ backgroundImage: `url(${heroImage})` }">
-            <p>Discover, Collect &<br>
-               Create your own Shop.</p>
-               <div class="buttons">
-                <div class="discover-btn">Discover</div>
-                <div class="create-btn">Create Your Shop</div>
-               </div>
+        <section class="hero" :style="{ backgroundImage: `url(${heroImage})` }">
+          <p>Discover, Collect &<br>Create your own Shop.</p>
+          <div class="buttons">
+            <div class="discover-btn">Discover</div>
+            <div class="create-btn">Create Your Shop</div>
+          </div>
         </section>
 
         <div class="horizontal-holder">
@@ -27,7 +25,8 @@ import heroImage from '@/assets/images/computer&accessories.png';
             <li>Recommend</li>
           </ul>
         </div>
-        <!--Products -->
+
+        <!-- Products -->
         <section class="featured">
           <h2>Products</h2>
           <div class="product-grid">
@@ -37,57 +36,22 @@ import heroImage from '@/assets/images/computer&accessories.png';
             </div>
           </div>
         </section>
-
       </div>
 
-      <!--Left Section-->
+      <!-- Left Section -->
       <div class="left-section">
         <section class="card">
           <div class="title">
             <div>Popular Products</div>
             <div class="see-all">See All</div>
           </div>
-          
-          <div class="products">
-            <div class="image"></div>
+          <div class="products" v-for="(product, index) in popularProducts" :key="'popular-' + index">
+            <div class="image" :style="{ backgroundImage: `url(${product.image})` }"></div>
             <div class="info">
               <ul>
-                <li>Product Name:</li>
-                <li>Product Details:</li>
-                <li>Product Price:</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="products">
-            <div class="image"></div>
-            <div class="info">
-              <ul>
-                <li>Product Name:</li>
-                <li>Product Details:</li>
-                <li>Product Price:</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="products">
-            <div class="image"></div>
-            <div class="info">
-              <ul>
-                <li>Product Name:</li>
-                <li>Product Details:</li>
-                <li>Product Price:</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="products">
-            <div class="image"></div>
-            <div class="info">
-              <ul>
-                <li>Product Name:</li>
-                <li>Product Details:</li>
-                <li>Product Price:</li>
+                <li><strong>Product Name:</strong> {{ product.name }}</li>
+                <li><strong>Product Details:</strong> {{ product.details }}</li>
+                <li><strong>Product Price:</strong> {{ product.price }}</li>
               </ul>
             </div>
           </div>
@@ -98,71 +62,32 @@ import heroImage from '@/assets/images/computer&accessories.png';
             <div>Top Seller</div>
             <div class="see-all">See All</div>
           </div>
-          
-          <div class="products">
-            <div class="image"></div>
+          <div class="products" v-for="(product, index) in popularProducts" :key="'top-' + index">
+            <div class="image" :style="{ backgroundImage: `url(${product.image})` }"></div>
             <div class="info">
               <ul>
-                <li>Product Name:</li>
-                <li>Product Details:</li>
-                <li>Product Price:</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="products">
-            <div class="image"></div>
-            <div class="info">
-              <ul>
-                <li>Product Name:</li>
-                <li>Product Details:</li>
-                <li>Product Price:</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="products">
-            <div class="image"></div>
-            <div class="info">
-              <ul>
-                <li>Product Name:</li>
-                <li>Product Details:</li>
-                <li>Product Price:</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="products">
-            <div class="image"></div>
-            <div class="info">
-              <ul>
-                <li>Product Name:</li>
-                <li>Product Details:</li>
-                <li>Product Price:</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="products">
-            <div class="image"></div>
-            <div class="info">
-              <ul>
-                <li>Product Name:</li>
-                <li>Product Details:</li>
-                <li>Product Price:</li>
+                <li><strong>Product Name:</strong> {{ product.name }}</li>
+                <li><strong>Product Details:</strong> {{ product.details }}</li>
+                <li><strong>Product Price:</strong> {{ product.price }}</li>
               </ul>
             </div>
           </div>
         </section>
       </div>
     </section>
-    
+
     <!-- Footer -->
     <footer class="footer">
       <p>&copy; 2025 S.A. All rights reserved.</p>
     </footer>
   </div>
 </template>
+
+<style scoped>
+/* === Keep your existing CSS styles — they're well structured === */
+/* You don't need to change your style section unless you're adding animation or transitions. */
+</style>
+
 
 <style scoped>
 .homepage {
@@ -334,4 +259,74 @@ import heroImage from '@/assets/images/computer&accessories.png';
   margin-top: 2rem;
   color:aliceblue;
 }
+
+
+/*Media Responsive*/
+@media screen and (max-width: 1024px) {
+  .sides {
+    flex-direction: column;
+  }
+
+  .right-section,
+  .left-section {
+    width: 100%;
+    margin: 0;
+  }
+
+  .hero p {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .buttons {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .discover-btn,
+  .create-btn {
+    width: 60%;
+    margin: 0.5rem 0;
+  }
+
+  .product-grid {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .hero p {
+    font-size: 2rem;
+  }
+
+  .horizontal-holder ul {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+
+  .horizontal-holder li {
+    margin: 0.5rem 0;
+  }
+
+  .product-card {
+    width: 90%;
+  }
+
+  .products {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image {
+    width: 80%;
+    height: 15vh;
+  }
+
+  .info ul {
+    padding: 0;
+  }
+}
+
 </style>
